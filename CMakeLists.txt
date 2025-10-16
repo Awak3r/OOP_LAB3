@@ -1,6 +1,6 @@
 
 cmake_minimum_required(VERSION 3.10)
-project(task2)
+project(task3)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -18,7 +18,9 @@ FetchContent_Declare(
   TLS_VERIFY false
 )
 
-add_library(${CMAKE_PROJECT_NAME}_lib src/six.cpp)
+add_library(${CMAKE_PROJECT_NAME}_lib
+  src/Custom_shapes.cpp 
+  src/Figure.cpp )
 add_executable(${CMAKE_PROJECT_NAME}_exe main.cpp)
 
 target_link_libraries(${CMAKE_PROJECT_NAME}_exe PRIVATE ${CMAKE_PROJECT_NAME}_lib)
